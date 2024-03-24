@@ -11,15 +11,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-const mailOptions = {
- from:{
-  name: "admin",
-  address: process.env.USER
- },
-  to:["haiqaahtsham@gmail.com"], //list of recievers
-  subject: 'Email Verification',
-  html: `<p>Please click <a href="landing-page.html">here</a> to verify your email.</p>`
-}
+
 const sendMail = async(transporter,mailOptions) =>{
   try{
     await transporter.sendMail(mailOptions)
@@ -29,4 +21,4 @@ const sendMail = async(transporter,mailOptions) =>{
   console.error(error);
   }
 }
-sendMail(transporter,mailOptions);
+//sendMail(transporter,mailOptions);
