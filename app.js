@@ -17,14 +17,21 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
+// /Connect to MongoDB
 mongoose.connect('mongodb+srv://f219061:SOmbBw4iqq4Eq89X@fitfusioncluster.jamdgd4.mongodb.net/');
+//mongoose.connect("mongodb+srv://haiqaahtsham:<UKFooVcJG7CIYFpG>@fitfusion.unza65s.mongodb.net/",);
+
+
+//const uri = "mongodb+srv://<haiqaahtsham>:<UKFooVcJG7CIYFpG>@fitfusion.unza65s.mongodb.net/?retryWrites=true&w=majority&appName=FitFusion";
+
+
+
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
-
 
 
 
